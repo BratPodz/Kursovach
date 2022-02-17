@@ -20,7 +20,7 @@ namespace Kursovach
         }
 
         MySqlConnection conn = new MySqlConnection(Con.C());
-        //DataAdapter представляет собой объект Command , получающий данные из источника данных.
+        //DataAdapter представляет собой объект Command , получающий данные из источника данных
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
         //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
         private BindingSource bSource = new BindingSource();

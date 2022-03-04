@@ -31,11 +31,14 @@ namespace Kursovach
         private DataSet ds = new DataSet();
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
+        string index_rows5;
+        string id_rows5;
+
 
         public void GetListPrice()
         {
             //Запрос для вывода строк в БДД
-            string sql = $"SELECT Kod_Producta AS 'Код продукта', Production AS 'Название', Postavjik.Production AS 'Тип продукта', Postavjik.Nazvanie_P AS 'Поставщик', Cena AS 'Цена' FROM Price INNER JOIN Postavjik ON Price.Kod = Postavjik.Kod";
+            string sql = $"SELECT Kod_Producta AS 'Код продукта', Production AS 'Название', Cena AS 'Цена' FROM Product";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn+
@@ -49,15 +52,10 @@ namespace Kursovach
             dataGridView1.Columns[0].FillWeight = 5;
             dataGridView1.Columns[1].FillWeight = 15;
             dataGridView1.Columns[2].FillWeight = 15;
-            dataGridView1.Columns[3].FillWeight = 15;
-            dataGridView1.Columns[4].FillWeight = 15;
-
 
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dataGridView1.AllowUserToAddRows = false;
 
@@ -66,9 +64,68 @@ namespace Kursovach
 
         }
 
+        public void DeletePrice(string id_product)
+        {
+            //Формируем строку запроса на добавление строк
+            string sql_delete_price = $"DELETE FROM Product WHERE Kod_Producta = '{id_product}'";
+            //Посылаем запрос на обновление данных
+            MySqlCommand delete_price = new MySqlCommand(sql_delete_price, conn);
+            try
+            {
+                conn.Open();
+                delete_price.ExecuteNonQuery();
+                MessageBox.Show("Удаление прошло успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView1.Rows.RemoveAt(Convert.ToInt32(index_rows5));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка удаления строки \n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+            finally
+            {
+                conn.Close();
+                //Вызов метода обновления ДатаГрида
+                Reload();
+            }
+        }
+
+        public void Reload()
+        {
+            //Чистим виртуальную таблицу
+            table.Clear();
+            //Вызываем метод получения записей, который вновь заполнит таблицу
+            GetListPrice();
+        }
+
         private void PriceList_Load(object sender, EventArgs e)
         {
             GetListPrice();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DeletePrice(id_rows5);
+            Reload();
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Left))
+            {
+                dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
+
+                dataGridView1.CurrentRow.Selected = true;
+
+                index_rows5 = dataGridView1.SelectedCells[0].RowIndex.ToString();
+
+                id_rows5 = dataGridView1.Rows[Convert.ToInt32(index_rows5)].Cells[0].Value.ToString();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Reload();
         }
     }
 }

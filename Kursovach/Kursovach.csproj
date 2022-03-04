@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\OneDrive\Рабочий стол\v4.5.2\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\v4.5.2\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

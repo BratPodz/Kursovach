@@ -57,10 +57,6 @@ namespace Kursovach
 
             string Kolvo = textBox4.Text;
 
-
-
-
-
             try
             {
                 conn.Open();

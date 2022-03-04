@@ -34,7 +34,7 @@ namespace Kursovach
 
         public void GetListPrice()
         {
-            //Запрос для вывода строк в БД
+            //Запрос для вывода строк в БДД
             string sql = $"SELECT Kod_Producta AS 'Код продукта', Production AS 'Название', Postavjik.Production AS 'Тип продукта', Postavjik.Nazvanie_P AS 'Поставщик', Cena AS 'Цена' FROM Price INNER JOIN Postavjik ON Price.Kod = Postavjik.Kod";
             //Открываем соединение
             conn.Open();

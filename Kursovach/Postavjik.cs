@@ -36,7 +36,7 @@ namespace Kursovach
         public void GetListPostavjik()
         {
             //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Postavjika AS 'Код поставщика', Nazvanie AS 'Название компании', Telefon AS 'Номер телефона', Rascetniy_Schet AS 'Расчётный счёт' FROM Postavjik";
+            string sql = $"SELECT Kod_Postavjika AS 'Код поставщика', Nazvanie_P AS 'Поставщик', Telefon AS 'Номер телефона', Rascetniy_Schet AS 'Расчётный счёт', Product AS 'Сырье', Kolvo AS 'Количество / Литров' FROM Postavjik";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
@@ -48,7 +48,7 @@ namespace Kursovach
             //Указываем, что источником данных ДатаГрида является bindingsource 
             dataGridView1.DataSource = bSource;
 
-            dataGridView1.Columns[0].FillWeight = 15;
+            dataGridView1.Columns[0].FillWeight = 10;
             dataGridView1.Columns[1].FillWeight = 15;
             dataGridView1.Columns[2].FillWeight = 15;
             dataGridView1.Columns[3].FillWeight = 15;
@@ -134,6 +134,12 @@ namespace Kursovach
         private void button3_Click(object sender, EventArgs e)
         {
             Reload();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Postavjik3 p = new Postavjik3();
+            p.ShowDialog();
         }
     }
 }

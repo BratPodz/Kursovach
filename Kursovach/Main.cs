@@ -35,5 +35,11 @@ namespace Kursovach
             Form2 f = new Form2();
             f.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PriceList price = new PriceList();
+            price.ShowDialog();
+        }
     }
 }

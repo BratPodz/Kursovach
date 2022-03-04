@@ -79,7 +79,7 @@ namespace Kursovach
             // устанавливаем соединение с БД
             conn.Open();
             // запрос
-            string sql = $"SELECT FIO, INN FROM Sotrudnik WHERE Kod_Sotrudnika={Kod_Sotrudnika}";
+            string sql = $"SELECT FIO FROM Sotrudnik WHERE Kod_Sotrudnika={Kod_Sotrudnika}";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // объект для чтения ответа сервера
@@ -89,8 +89,6 @@ namespace Kursovach
             {
                 // элементы массива [] - это значения столбцов из запроса SELECT
                 label1.Text = reader[0].ToString();
-                label2.Text = reader[1].ToString();
-
             }
             reader.Close(); // закрываем reader
             // закрываем соединение с БД

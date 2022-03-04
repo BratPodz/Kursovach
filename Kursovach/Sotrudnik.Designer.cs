@@ -120,7 +120,7 @@ namespace Kursovach
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.BackColor = System.Drawing.Color.MistyRose;
             this.button4.BackgroundImage = global::Kursovach.Properties.Resources.free_icon_edit_file_1647948;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

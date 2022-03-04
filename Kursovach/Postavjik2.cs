@@ -25,19 +25,19 @@ namespace Kursovach
         private void button1_Click(object sender, EventArgs e)
         {
             //Определяем значение переменных для записи в БД
-            string kod_postavjika = textBox1.Text;
-            string nazvanie = textBox2.Text;
-            string telefon = textBox3.Text;
-            string rascetniy_schet = textBox4.Text;
-
+            string nazvanie = textBox4.Text;
+            string telefon = maskedTextBox1.Text;
+            string rascetniy_schet = maskedTextBox2.Text;
+            string Kolvo = textBox1.Text;
             //Формируем запрос на изменение
-            string sql_update_current_stud = $"INSERT INTO Postavjik (Kod_Postavjika, Nazvanie, Telefon, Rascetniy_Schet) " +
-                                             $"VALUES ('{kod_postavjika}', '{nazvanie}', '{telefon}', '{rascetniy_schet}')";
+            string sql_update_postavjik = $"INSERT INTO Postavjik (Nazvanie_P, Telefon, Rascetniy_Schet, Product, Kolvo) " +
+                                             $"VALUES ('{nazvanie}', '{telefon}', '{rascetniy_schet}', '{comboBox1.Text}', '{Kolvo}')";
             // устанавливаем соединение с БД
             conn.Open();
             // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(sql_update_current_stud, conn);
+            MySqlCommand command = new MySqlCommand(sql_update_postavjik, conn);
             // выполняем запрос
+            command.ExecuteNonQuery();
             // закрываем подключение к БД
             conn.Close();
             //Закрываем форму

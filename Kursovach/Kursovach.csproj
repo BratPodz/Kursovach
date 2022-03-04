@@ -68,6 +68,18 @@
     <Compile Include="Postavjik2.Designer.cs">
       <DependentUpon>Postavjik2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Postavjik3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Postavjik3.Designer.cs">
+      <DependentUpon>Postavjik3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceList.Designer.cs">
+      <DependentUpon>PriceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sotridnik2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Postavjik2.resx">
       <DependentUpon>Postavjik2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Postavjik3.resx">
+      <DependentUpon>Postavjik3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceList.resx">
+      <DependentUpon>PriceList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sotridnik2.resx">
       <DependentUpon>Sotridnik2.cs</DependentUpon>

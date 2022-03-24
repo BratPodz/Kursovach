@@ -10,11 +10,11 @@ namespace ClassLibrary2
     {
         public static string C()
         {
-            const string Host = "caseum.ru";
+            const string Host = "chuc.caseum.ru";
             const int Port = 33333;
-            const string User = "st_2_24_19";
-            const string Db = "st_2_24_19";
-            const string Pass = "65770709";
+            const string User = "st_2_19_24";
+            const string Db = "is_2_19_st24_KURS";
+            const string Pass = "16465377";
             string connStr = $"server={Host};" +
             $"port={Port};" +
             $"user={User};" +

@@ -80,7 +80,6 @@ namespace Kursovach
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка удаления строки \n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
             }
             finally
             {

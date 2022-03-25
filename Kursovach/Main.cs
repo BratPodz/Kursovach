@@ -41,5 +41,11 @@ namespace Kursovach
             PriceList price = new PriceList();
             price.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Prodaja prodaja = new Prodaja();
+            prodaja.ShowDialog();
+        }
     }
 }

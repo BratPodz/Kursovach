@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Prodaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prodaja.Designer.cs">
+      <DependentUpon>Prodaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PriceList.resx">
       <DependentUpon>PriceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prodaja.resx">
+      <DependentUpon>Prodaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sotridnik2.resx">
       <DependentUpon>Sotridnik2.cs</DependentUpon>

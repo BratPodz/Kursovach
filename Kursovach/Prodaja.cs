@@ -69,7 +69,12 @@ namespace Kursovach
             conn.Close();
 
         }
-        
+        public void reload_list()
+        {
+            table.Clear();
+            GetListProduct();
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -123,6 +128,12 @@ namespace Kursovach
 
             }
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            reload_list();
         }
     }
 }

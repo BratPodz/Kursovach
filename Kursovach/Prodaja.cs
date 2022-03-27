@@ -41,7 +41,7 @@ namespace Kursovach
         public void GetListProduct()
         {
             //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Producta AS 'Код Продукта', Production AS 'Название Продукта', Cena AS 'Цена' FROM Product";
+            string sql = $"SELECT Kod_Producta AS 'Код Продукта', Production AS 'Название Продукта', Cena AS 'Цена', col AS 'Количество', ost AS 'Остаток' FROM Product";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
@@ -69,60 +69,60 @@ namespace Kursovach
             conn.Close();
 
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            ////Ввод артикуля
-            //string pcod = textBox1.Text;
-            ////Кол-во товара
-            //string kol = textBox2.Text;
+            //Ввод артикуля
+            string pcod = textBox1.Text;
+            //Кол-во товара
+            string kol = textBox2.Text;
 
 
-            //// устанавливаем соединение с БД
-            //conn.Open();
-            //// запрос обновления данных
-            //string query2 = $"UPDATE Tovar SET t_sale = {kol} + t_sale, t_itog = t_itog + {kol}, t_ostatok = t_ostatok - {kol},t_itog = t_cena * {kol} + t_itog WHERE t_articul = {pcod}";
+            // устанавливаем соединение с БД
+            conn.Open();
+            // запрос обновления данных
+            string query2 = $"UPDATE Product SET sale = {kol} + sale, itog = itog + {kol}, ost = ost - {kol}, itog = cena * {kol} + itog WHERE Kod_Producta = {pcod}";
 
-            //MySqlCommand command = new MySqlCommand(query2, conn);
-            //// выполняем запрос
-            //command.ExecuteNonQuery();
+            MySqlCommand command = new MySqlCommand(query2, conn);
+            // выполняем запрос
+            command.ExecuteNonQuery();
 
-            //// закрываем подключение к БД
-            //conn.Close();
-            //reload_list();
+            // закрываем подключение к БД
+            conn.Close();
+            
 
 
-            //try
-            //{
-            //    //Вводим фио покупателя
-            //    string fio = textBox3.Text;
-            //    //Вводим компанию
-            //    string comp = textBox4.Text;
-            //    //Вводим почта
-            //    string email = textBox5.Text;
-            //    //Вводим дату покупки
-            //    string cData = maskedTextBox1.Text;
+            try
+            {
+                
+                //Вводим компанию
+                string comp = textBox4.Text;
+                //Вводим дату покупки
+                string cData = maskedTextBox1.Text;
 
-            //    // устанавливаем соединение с БД
-            //    conn.Open();
-            //    // запрос обновления данных
-            //    string query4 = $"INSERT INTO client (c_fio, c_comp, c_email, c_date, c_kol, с_nZakaz) " +
-            //                                $"VALUES ('{fio}', '{comp}', '{email}', '{cData}', '{kol}', '{pcod}')";
+                // устанавливаем соединение с БД
+                conn.Open();
+                // запрос обновления данных
+                string query4 = $"INSERT INTO Prodaja (Kolichestvo, Data_Prodaji, Name_Komp) " +
+                                            $"VALUES ('{kol}','{cData}','{comp}')";
 
-            //    MySqlCommand command3 = new MySqlCommand(query4, conn);
-            //    // выполняем запрос
-            //    command3.ExecuteNonQuery();
-            //    // закрываем подключение к БД
-            //    conn.Close();
-            //    reload_list();
+                MySqlCommand command3 = new MySqlCommand(query4, conn);
+                // выполняем запрос
+                command3.ExecuteNonQuery();
+                // закрываем подключение к БД
+                conn.Close();
+                
 
-            //    MessageBox.Show("Покупка совершена \n" + textBox3.Text);
-            //}
-            //catch
-            //{
 
-            //}
+
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 }

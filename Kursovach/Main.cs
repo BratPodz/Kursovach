@@ -47,5 +47,11 @@ namespace Kursovach
             Prodaja prodaja = new Prodaja();
             prodaja.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Otchet otchet = new Otchet();
+            otchet.ShowDialog();
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace Kursovach
         public void GetListProduct()
         {
             //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Producta AS 'Код Продукта', Production AS 'Название Продукта', ost AS 'Остаток', sale AS 'Продано', itog AS 'Прибыль', Prodaja.Data_Prodaji AS 'Дата продажи', Prodaja.Name_Komp AS 'Имя'  FROM Product INNER JOIN Prodaja ON Product.id = Prodaja.id";
+            string sql = $"SELECT Kod_Prodaji AS 'Код продажи', Production AS 'Название продукта', ost AS 'Остаток', sale AS 'Продано', itog AS 'Прибыль', Prodaja.Data_Prodaji AS 'Дата продажи', Prodaja.Name_Komp AS 'Имя'  FROM Product INNER JOIN Prodaja ON Product.id = Prodaja.id";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
@@ -51,13 +51,21 @@ namespace Kursovach
             //Указываем, что источником данных ДатаГрида является bindingsource 
             dataGridView1.DataSource = bSource;
 
-            dataGridView1.Columns[0].FillWeight = 5;
-            dataGridView1.Columns[1].FillWeight = 25;
-            dataGridView1.Columns[2].FillWeight = 5;
+            dataGridView1.Columns[0].FillWeight = 2;
+            dataGridView1.Columns[1].FillWeight = 5;
+            dataGridView1.Columns[2].FillWeight = 3;
+            dataGridView1.Columns[3].FillWeight = 3;
+            dataGridView1.Columns[4].FillWeight = 3;
+            dataGridView1.Columns[5].FillWeight = 3;
+            dataGridView1.Columns[6].FillWeight = 3;
 
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             int count_rows = dataGridView1.RowCount - 0;
 
@@ -65,7 +73,6 @@ namespace Kursovach
             dataGridView1.AllowUserToAddRows = false;
 
             conn.Close();
-
         }
     }
 }

@@ -78,26 +78,19 @@ namespace Kursovach
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             //Ввод артикуля
             string pcod = textBox1.Text;
             //Кол-во товара
             string kol = textBox2.Text;
-
-
             // устанавливаем соединение с БД
             conn.Open();
             // запрос обновления данных
             string query2 = $"UPDATE Product SET sale = {kol} + sale, itog = itog + {kol}, ost = ost - {kol}, itog = cena * {kol} + itog WHERE Kod_Producta = {pcod}";
-
             MySqlCommand command = new MySqlCommand(query2, conn);
             // выполняем запрос
             command.ExecuteNonQuery();
-
             // закрываем подключение к БД
             conn.Close();
-            
-
 
             try
             {
@@ -105,22 +98,20 @@ namespace Kursovach
                 //Вводим компанию
                 string comp = textBox4.Text;
                 //Вводим дату покупки
-                string cData = maskedTextBox1.Text;
+
+                string date_of_operation = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                 // устанавливаем соединение с БД
                 conn.Open();
                 // запрос обновления данных
                 string query4 = $"INSERT INTO Prodaja (Kolichestvo, Data_Prodaji, Name_Komp) " +
-                                            $"VALUES ('{kol}','{cData}','{comp}')";
+                                            $"VALUES ('{kol}','{date_of_operation}','{comp}')";
 
                 MySqlCommand command3 = new MySqlCommand(query4, conn);
                 // выполняем запрос
                 command3.ExecuteNonQuery();
                 // закрываем подключение к БД
                 conn.Close();
-                
-
-
 
             }
             catch

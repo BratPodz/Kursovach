@@ -27,7 +27,7 @@ namespace Kursovach
         MySqlConnection conn = new MySqlConnection(Con.C());
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
-        //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
+        //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных
         private BindingSource bSource = new BindingSource();
         //DataSet - расположенное в оперативной памяти представление данных, обеспечивающее согласованную реляционную программную 
         //модель независимо от источника данных.DataSet представляет полный набор данных, включая таблицы, содержащие, упорядочивающие 

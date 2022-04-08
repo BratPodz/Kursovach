@@ -39,14 +39,14 @@ namespace Kursovach
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(95, 23);
+            this.textBox4.Location = new System.Drawing.Point(39, 23);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(184, 20);
             this.textBox4.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(95, 234);
+            this.button1.Location = new System.Drawing.Point(39, 234);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 4;
@@ -62,14 +62,14 @@ namespace Kursovach
             "Творог",
             "Сыр",
             "Йогурт"});
-            this.comboBox1.Location = new System.Drawing.Point(95, 148);
+            this.comboBox1.Location = new System.Drawing.Point(39, 148);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(184, 21);
             this.comboBox1.TabIndex = 17;
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(95, 59);
+            this.maskedTextBox1.Location = new System.Drawing.Point(39, 59);
             this.maskedTextBox1.Mask = "7(###)###-##-##";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(184, 20);
@@ -77,7 +77,7 @@ namespace Kursovach
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(95, 108);
+            this.maskedTextBox2.Location = new System.Drawing.Point(39, 108);
             this.maskedTextBox2.Mask = "###-##-###-#-####-#######";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(184, 20);
@@ -85,7 +85,7 @@ namespace Kursovach
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 184);
+            this.textBox1.Location = new System.Drawing.Point(39, 184);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 20;
@@ -94,7 +94,7 @@ namespace Kursovach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 321);
+            this.ClientSize = new System.Drawing.Size(260, 296);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.maskedTextBox1);

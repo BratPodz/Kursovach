@@ -126,5 +126,11 @@ namespace Kursovach
         {
             Reload();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PriceList2 p = new PriceList2();
+            p.ShowDialog();
+        }
     }
 }

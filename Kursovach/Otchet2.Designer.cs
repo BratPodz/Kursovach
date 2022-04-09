@@ -1,7 +1,7 @@
 ﻿
 namespace Kursovach
 {
-    partial class Otchet
+    partial class Otchet2
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace Kursovach
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,29 +38,18 @@ namespace Kursovach
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1100, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 415);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 416);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 38);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Otchet
+            // Otchet2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 492);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(800, 464);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Otchet";
-            this.Text = "Отчет";
-            this.Load += new System.EventHandler(this.Otchet_Load);
+            this.Name = "Otchet2";
+            this.Text = "Otchet2";
+            this.Load += new System.EventHandler(this.Otchet2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -70,6 +58,5 @@ namespace Kursovach
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
     }
 }

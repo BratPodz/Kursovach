@@ -56,6 +56,18 @@
     <Compile Include="Otchet.Designer.cs">
       <DependentUpon>Otchet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Otchet2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Otchet2.Designer.cs">
+      <DependentUpon>Otchet2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceList3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceList3.Designer.cs">
+      <DependentUpon>PriceList3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prodaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,9 @@
     <EmbeddedResource Include="Otchet.resx">
       <DependentUpon>Otchet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Otchet2.resx">
+      <DependentUpon>Otchet2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Postavjik.resx">
       <DependentUpon>Postavjik.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PriceList2.resx">
       <DependentUpon>PriceList2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceList3.resx">
+      <DependentUpon>PriceList3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prodaja.resx">
       <DependentUpon>Prodaja.cs</DependentUpon>

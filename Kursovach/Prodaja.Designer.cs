@@ -61,7 +61,7 @@ namespace Kursovach
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(573, 39);
+            this.textBox1.Location = new System.Drawing.Point(573, 37);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(173, 20);
             this.textBox1.TabIndex = 2;

@@ -12,12 +12,14 @@ using MySql.Data.MySqlClient;
 
 namespace Kursovach
 {
-    public partial class Otchet : Form
+    public partial class Otchet2 : Form
     {
-        public Otchet()
+
+        public Otchet2()
         {
             InitializeComponent();
         }
+
         MySqlConnection conn = new MySqlConnection(Con.C());
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
@@ -30,16 +32,16 @@ namespace Kursovach
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
 
-        private void Otchet_Load(object sender, EventArgs e)
+        private void Otchet2_Load(object sender, EventArgs e)
         {
-            GetListProduct();
+            GetListOtchet();
         }
-        public void GetListProduct()
+
+        public void GetListOtchet()
         {
-            //string sql = $"SELECT DISTINCTROW Product.Production AS 'Продукт', SUM(Product.sale) AS 'Продано' FROM Prodaja INNER JOIN Product ON Prodaja.id = Product.Kod_Producta GROUP BY Product.Production";
+            string sql = $"SELECT Production AS 'Продукт', sale AS 'Продано', itog AS 'На сумму' FROM Product";
             //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Prodaji AS 'Код продажи', Production AS 'Название продукта', Kolichestvo AS 'Количество', Prodaja.Data_Prodaji AS 'Дата продажи', Prodaja.Name_Komp AS 'Имя'  FROM Product INNER JOIN Prodaja ON Product.Kod_Producta = Prodaja.id";
-            ////Открываем соединение
+     
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
             MyDA.SelectCommand = new MySqlCommand(sql, conn);
@@ -52,27 +54,18 @@ namespace Kursovach
 
             dataGridView1.Columns[0].FillWeight = 2;
             dataGridView1.Columns[1].FillWeight = 5;
-            dataGridView1.Columns[2].FillWeight = 3;
-            dataGridView1.Columns[3].FillWeight = 3;
-            dataGridView1.Columns[4].FillWeight = 3;
+            //dataGridView1.Columns[2].FillWeight = 2;
+
 
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            int count_rows = dataGridView1.RowCount - 0;
+            //dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
 
             conn.Close();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Otchet2 o = new Otchet2();
-            o.ShowDialog();
-        }
+
     }
 }

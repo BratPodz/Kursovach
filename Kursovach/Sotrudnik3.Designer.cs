@@ -47,6 +47,7 @@ namespace Kursovach
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -71,7 +72,7 @@ namespace Kursovach
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 50);
+            this.textBox1.Location = new System.Drawing.Point(11, 222);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(189, 20);
             this.textBox1.TabIndex = 2;
@@ -208,11 +209,20 @@ namespace Kursovach
             this.label10.Size = new System.Drawing.Size(0, 13);
             this.label10.TabIndex = 25;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(11, 55);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(189, 21);
+            this.comboBox2.TabIndex = 26;
+            // 
             // Sotrudnik3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 352);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -233,6 +243,7 @@ namespace Kursovach
             this.Controls.Add(this.button1);
             this.Name = "Sotrudnik3";
             this.Text = "Sotrudnik3";
+            this.Load += new System.EventHandler(this.Sotrudnik3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +269,6 @@ namespace Kursovach
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

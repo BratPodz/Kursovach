@@ -37,6 +37,7 @@ namespace Kursovach
         private DataTable table = new DataTable();
 
 
+
         public void GetListProduct()
         {
             //Запрос для вывода строк в БД
@@ -81,38 +82,64 @@ namespace Kursovach
             //Ввод артикуля
             string pcod = textBox1.Text;
             //Кол-во товара
-            string kol = textBox2.Text;
+            int kol = Convert.ToInt32(textBox2.Text);
+
+            string comp = textBox4.Text;
+
+            string date_of_operation = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            int ooos = 0;
+            int cena = 0;
+            int itog = 0;
+            int sale = 0;
 
             // устанавливаем соединение с БД
             conn.Open();
             // запрос обновления данных
 
-            string query2 = $"UPDATE Product SET sale = {kol} + sale, ost = ost - {kol}, itog = Cena * {kol} + itog WHERE Kod_Producta = {pcod}";
-            MySqlCommand command = new MySqlCommand(query2, conn);
-            command.ExecuteNonQuery();
+            string ost = $"SELECT ost, Cena, itog, sale FROM Product WHERE Kod_Producta = {pcod}";
 
-            try
+            MySqlCommand commanda = new MySqlCommand(ost,conn);
+            MySqlDataReader reader = commanda.ExecuteReader();
+
+            while(reader.Read())
             {
-                //Вводим компанию
-                string comp = textBox4.Text;
-                //Вводим дату покупки
-                string date_of_operation = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                // устанавливаем соединение с БД
-                // запрос обновления данных
-                string query4 = $"INSERT INTO Prodaja (Kolichestvo, Data_Prodaji, Name_Komp, id)" +
-                                $"VALUES ('{kol}','{date_of_operation}','{comp}','{pcod}')";
-
-                MySqlCommand command3 = new MySqlCommand(query4, conn);
-                // выполняем запрос
-                command3.ExecuteNonQuery();
-                // закрываем подключение к БД
-
+                ooos = Convert.ToInt32(reader[0]);
+                cena = Convert.ToInt32(reader[1]);
+                itog = Convert.ToInt32(reader[2]);
+                sale = Convert.ToInt32(reader[3]);
             }
-            finally
+            reader.Close();
+
+            if (kol <= ooos)
             {
-                MessageBox.Show($"Заказ успешно создан");
-                conn.Close();
+                sale = kol + sale;
+                ooos = ooos - kol;
+                itog = cena * kol + itog;
+                try
+                {
+                    string query2 = $"UPDATE Product SET sale = {sale}, ost = {ooos}, itog = {itog} WHERE Kod_Producta = {pcod}";
+                    MySqlCommand command = new MySqlCommand(query2, conn);
+                    command.ExecuteNonQuery();
+
+                    string query4 = $"INSERT INTO Prodaja (Kolichestvo, Data_Prodaji, Name_Komp, id)" +
+                    $"VALUES ('{kol}','{date_of_operation}','{comp}','{pcod}')";
+                    MySqlCommand command3 = new MySqlCommand(query4, conn);
+                    // выполняем запрос
+                    command3.ExecuteNonQuery();
+                }
+                finally
+                {
+                    MessageBox.Show($"Заказ успешно создан");
+                }
             }
+
+            else if (kol > ooos)
+            {
+                MessageBox.Show($"Товара нет в наличии");
+            }
+
+            conn.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

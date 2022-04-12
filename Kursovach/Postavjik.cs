@@ -36,7 +36,7 @@ namespace Kursovach
         public void GetListPostavjik()
         {
             //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Postavjika AS 'Код поставщика', Nazvanie_P AS 'Поставщик', Telefon AS 'Номер телефона', Rascetniy_Schet AS 'Расчётный счёт', Product AS 'Сырье', Kolvo AS 'Количество / Литров' FROM Postavjik";
+            string sql = $"SELECT Kod_Postavjika AS 'Код поставщика', Nazvanie_P AS 'Поставщик', Telefon AS 'Номер телефона', Rascetniy_Schet AS 'Расчётный счёт', Product AS 'Сырье', Kolvo AS 'Количество' FROM Postavjik";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
@@ -48,20 +48,24 @@ namespace Kursovach
             //Указываем, что источником данных ДатаГрида является bindingsource 
             dataGridView1.DataSource = bSource;
 
-            dataGridView1.Columns[0].FillWeight = 10;
+            dataGridView1.Columns[0].FillWeight = 9;
             dataGridView1.Columns[1].FillWeight = 15;
-            dataGridView1.Columns[2].FillWeight = 15;
-            dataGridView1.Columns[3].FillWeight = 15;
+            dataGridView1.Columns[2].FillWeight = 10;
+            dataGridView1.Columns[3].FillWeight = 17;
+            dataGridView1.Columns[4].FillWeight = 10;
+            dataGridView1.Columns[5].FillWeight = 9;
 
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dataGridView1.AllowUserToAddRows = false;
-                 
-            //int count_rows = dataGridView1.RowCount - 0;
-            //toolStripLabel1.Text = (count_rows).ToString();
+
+            int count_rows = dataGridView1.RowCount - 0;
+            label10.Text = (count_rows).ToString();
 
             dataGridView1.RowHeadersVisible = false;
             conn.Close();
@@ -100,10 +104,9 @@ namespace Kursovach
                 MessageBox.Show("Удаление прошло успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.Rows.RemoveAt(Convert.ToInt32(index_rows5));
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Ошибка удаления строки \n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
+                MessageBox.Show($"Ошибка в удалении");
             }
             finally
             {
@@ -120,26 +123,32 @@ namespace Kursovach
             GetListPostavjik();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Уволить_сотрудника_Click(object sender, EventArgs e)
         {
             DeleteSotrudnik(id_rows5);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Postavjik2 p = new Postavjik2();
             p.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Reload();
+            Postavjik3 p = new Postavjik3();
+            p.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Postavjik3 p = new Postavjik3();
-            p.ShowDialog();
+            Reload();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Sotrudnik3 s = new Sotrudnik3();
+            s.ShowDialog();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Kursovach
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            MaximizeBox = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

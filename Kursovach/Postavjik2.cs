@@ -22,7 +22,7 @@ namespace Kursovach
 
         MySqlConnection conn = new MySqlConnection(Con.C());
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             //Определяем значение переменных для записи в БД
             string nazvanie = textBox4.Text;
@@ -30,18 +30,27 @@ namespace Kursovach
             string rascetniy_schet = maskedTextBox2.Text;
             string Kolvo = textBox1.Text;
             //Формируем запрос на изменение
-            string sql_update_postavjik = $"INSERT INTO Postavjik (Nazvanie_P, Telefon, Rascetniy_Schet, Product, Kolvo) " +
-                                             $"VALUES ('{nazvanie}', '{telefon}', '{rascetniy_schet}', '{comboBox1.Text}', '{Kolvo}')";
-            // устанавливаем соединение с БД
-            conn.Open();
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(sql_update_postavjik, conn);
-            // выполняем запрос
-            command.ExecuteNonQuery();
-            // закрываем подключение к БД
-            conn.Close();
-            //Закрываем форму
-            this.Close();
+
+            if (nazvanie == string.Empty || telefon == string.Empty || rascetniy_schet == string.Empty || Kolvo == string.Empty)
+            {
+                MessageBox.Show($"Введены не все данные");
+            }
+            else
+            {
+                string sql_update_postavjik = $"INSERT INTO Postavjik (Nazvanie_P, Telefon, Rascetniy_Schet, Product, Kolvo) " +
+                                 $"VALUES ('{nazvanie}', '{telefon}', '{rascetniy_schet}', '{comboBox1.Text}', '{Kolvo}')";
+                // устанавливаем соединение с БД
+                conn.Open();
+                // объект для выполнения SQL-запроса
+                MySqlCommand command = new MySqlCommand(sql_update_postavjik, conn);
+                // выполняем запрос
+                command.ExecuteNonQuery();
+                // закрываем подключение к БД
+                conn.Close();
+                //Закрываем форму
+                MessageBox.Show($"Поставщик успешно добавлен");
+                this.Close();
+            }
         }
     }
 }

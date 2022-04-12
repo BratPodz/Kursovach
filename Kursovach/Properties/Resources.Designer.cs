@@ -63,9 +63,89 @@ namespace Kursovach.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_delivery_time_3143267 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-delivery-time-3143267", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_delivery_time_3143267__1_ {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-delivery-time-3143267 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_edit_file_1647948 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-edit-file-1647948", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_employees_554795 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-employees-554795", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_employees_554795__1_ {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-employees-554795 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_forklift_2361979 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-forklift-2361979", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_forklift_2361979__1_ {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-forklift-2361979 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_health_report_7256630 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-health-report-7256630", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_money_icons_351769 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-money-icons-351769", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +163,29 @@ namespace Kursovach.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngegg__3_ {
+            get {
+                object obj = ResourceManager.GetObject("pngegg (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngwing_com__9_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (9)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap premium_icon_add_to_cart_5412593 {
+            get {
+                object obj = ResourceManager.GetObject("premium-icon-add-to-cart-5412593", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +203,39 @@ namespace Kursovach.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap premium_icon_milk_carton_3414351 {
+            get {
+                object obj = ResourceManager.GetObject("premium-icon-milk-carton-3414351", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap premium_icon_money_bags_3639404 {
+            get {
+                object obj = ResourceManager.GetObject("premium-icon-money-bags-3639404", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap premium_icon_note_665916 {
             get {
                 object obj = ResourceManager.GetObject("premium-icon-note-665916", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap premium_icon_to_do_list_5959449 {
+            get {
+                object obj = ResourceManager.GetObject("premium-icon-to-do-list-5959449", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

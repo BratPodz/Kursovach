@@ -35,44 +35,6 @@ namespace Kursovach
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //Получаем айди сотрудника
-            string Kod_Sotrudnika = textBox1.Text;
-            //Меняем фио сотруднику
-            string FIO = textBox4.Text;
-            //Получаем новое количество
-            string Data_Rojdeniya = maskedTextBox1.Text;
-            //Получаем новоый рейтинг
-            string Adres = textBox6.Text;
-            //Получаем новоый рейтинг
-            string Telefon = maskedTextBox2.Text;
-
-            string INN = maskedTextBox3.Text;
-
-            try
-            {
-                conn.Open();
-                // запрос обновления данных
-                string query2 = $"UPDATE Sotrudnik SET FIO = '{FIO}', Data_Rojdeniya = '{Data_Rojdeniya}', Adres = '{Adres}', Telefon = '{Telefon}', INN = '{INN}', Kod_Doljnosti = {comboBox1.SelectedIndex + 1}   WHERE Kod_Sotrudnika = {comboBox2.ValueMember}";
-                // объект для выполнения SQL-запроса
-                MySqlCommand command = new MySqlCommand(query2, conn);
-                // выполняем запрос
-                command.ExecuteNonQuery();
-                // закрываем подключение к БД
-                MessageBox.Show($"Изменение прошло успешно!");
-                conn.Close();
-            }
-            catch
-            {
-                MessageBox.Show($"Ошибка в добавлении");
-            }
-            finally
-            {
-                conn.Close();
-                this.Close();
-            }
-        }
 
         public void GetComboBoxList()
         {
@@ -119,28 +81,50 @@ namespace Kursovach
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            //Объявлем переменную для запроса в БД
-            string Kod_Sotrudnika = textBox1.Text;
-            // устанавливаем соединение с БД
-            conn.Open();
-            // запрос
-            string sql = $"SELECT FIO FROM Sotrudnik WHERE Kod_Sotrudnika={Kod_Sotrudnika}";
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(sql, conn);
-            // объект для чтения ответа сервера
-            MySqlDataReader reader = command.ExecuteReader();
-            // читаем результат
-            while (reader.Read())
+            string n_prep = comboBox2.SelectedValue.ToString();
+            //Меняем фио сотруднику
+            string FIO = textBox4.Text;
+            //Получаем новое количество
+            string Data_Rojdeniya = maskedTextBox1.Text;
+            //Получаем новоый рейтинг
+            string Adres = textBox6.Text;
+            //Получаем новоый рейтинг
+            string Telefon = maskedTextBox2.Text;
+
+            string INN = maskedTextBox3.Text;
+
+
+            if (FIO == string.Empty || maskedTextBox1.Text.Length < 10 || Adres == string.Empty || maskedTextBox2.Text.Length < 15 || maskedTextBox3.Text.Length < 14 || comboBox1.Text == string.Empty)
             {
-                // элементы массива [] - это значения столбцов из запроса SELECT
-                label1.Text = reader[0].ToString();
+                MessageBox.Show($"Введеные не все данные");
             }
-            reader.Close(); // закрываем reader
-            // закрываем соединение с БД
-            conn.Close();
+
+            else
+            {
+                try
+                {
+                    conn.Open();
+                    string query2 = $"UPDATE Sotrudnik SET FIO = '{FIO}', Data_Rojdeniya = '{Data_Rojdeniya}', Adres = '{Adres}', Telefon = '{Telefon}', INN = '{INN}', Kod_Doljnosti = {comboBox1.SelectedIndex + 1} WHERE Kod_Sotrudnika = {n_prep}";
+                    // объект для выполнения SQL-запроса
+                    MySqlCommand command = new MySqlCommand(query2, conn);
+                    // выполняем запрос
+                    command.ExecuteNonQuery();
+                    // закрываем подключение к БД
+                    MessageBox.Show($"Изменение прошло успешно!");
+                    conn.Close();
+                }
+                catch
+                {
+                    MessageBox.Show($"Ошибка в добавлении");
+                }
+                finally
+                {
+                    conn.Close();
+                    this.Close();
+                }
+            }
         }
     }
 }

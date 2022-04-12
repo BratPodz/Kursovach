@@ -58,8 +58,11 @@ namespace Kursovach
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dataGridView1.AllowUserToAddRows = false;
-
             dataGridView1.RowHeadersVisible = false;
+
+            int count_rows = dataGridView1.RowCount - 0;
+            label10.Text = (count_rows).ToString();
+
             conn.Close();
 
         }
@@ -102,12 +105,6 @@ namespace Kursovach
             GetListPrice();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DeletePrice(id_rows5);
-            Reload();
-        }
-
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Left))
@@ -122,21 +119,27 @@ namespace Kursovach
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Удалить_поставщика_Click(object sender, EventArgs e)
         {
+            DeletePrice(id_rows5);
             Reload();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             PriceList2 p = new PriceList2();
             p.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             PriceList3 p = new PriceList3();
             p.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Reload();
         }
     }
 }

@@ -216,5 +216,44 @@
   <ItemGroup>
     <None Include="Resources\pngwing.com %289%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngegg %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-employees-554795.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-delivery-time-3143267.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-delivery-time-3143267 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-forklift-2361979.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-employees-554795 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-forklift-2361979 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-milk-carton-3414351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-money-icons-351769.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-money-bags-3639404.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-to-do-list-5959449.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-add-to-cart-5412593.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-health-report-7256630.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

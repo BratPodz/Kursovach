@@ -22,6 +22,7 @@ namespace Kursovach
         private void Prodaja_Load(object sender, EventArgs e)
         {
             GetListProduct();
+            GetComboBoxList();
         }
 
         MySqlConnection conn = new MySqlConnection(Con.C());
@@ -35,6 +36,51 @@ namespace Kursovach
         private DataSet ds = new DataSet();
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
+
+        public void GetComboBoxList()
+        {
+            //Формирование списка статусов
+            DataTable list_sotrudnik_table = new DataTable();
+            MySqlCommand list_sotrudnik_command = new MySqlCommand();
+            //Открываем соединение
+            conn.Open();
+            //Формируем столбцы для комбобокса списка ЦП
+            list_sotrudnik_table.Columns.Add(new DataColumn("Kod_Producta", System.Type.GetType("System.Int32")));
+            list_sotrudnik_table.Columns.Add(new DataColumn("Production", System.Type.GetType("System.String")));
+            //Настройка видимости полей комбобокса
+            comboBox1.DataSource = list_sotrudnik_table;
+            comboBox1.DisplayMember = "Production";
+            comboBox1.ValueMember = "Kod_Producta";
+            //Формируем строку запроса на отображение списка статусов прав пользователя
+            string sql_list_users = "SELECT Kod_Producta, Production FROM Product";
+            list_sotrudnik_command.CommandText = sql_list_users;
+            list_sotrudnik_command.Connection = conn;
+            //Формирование списка ЦП для combobox'a
+            MySqlDataReader list_sotrudnik_reader;
+            try
+            {
+                //Инициализируем ридер
+                list_sotrudnik_reader = list_sotrudnik_command.ExecuteReader();
+                while (list_sotrudnik_reader.Read())
+                {
+                    DataRow rowToAdd = list_sotrudnik_table.NewRow();
+                    rowToAdd["Kod_Producta"] = Convert.ToInt32(list_sotrudnik_reader[0]);
+                    rowToAdd["Production"] = list_sotrudnik_reader[1].ToString();
+                    list_sotrudnik_table.Rows.Add(rowToAdd);
+                }
+                list_sotrudnik_reader.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка чтения списка ЦП \n\n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
 
 
@@ -80,7 +126,7 @@ namespace Kursovach
         private void button1_Click(object sender, EventArgs e)
         {
             //Ввод артикуля
-            string pcod = textBox1.Text;
+            string pcod = comboBox1.SelectedValue.ToString();
             //Кол-во товара
             int kol = Convert.ToInt32(textBox2.Text);
 

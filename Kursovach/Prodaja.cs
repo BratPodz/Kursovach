@@ -23,6 +23,7 @@ namespace Kursovach
         {
             GetListProduct();
             GetComboBoxList();
+            MaximizeBox = false;
         }
 
         MySqlConnection conn = new MySqlConnection(Con.C());
@@ -123,7 +124,7 @@ namespace Kursovach
             GetListProduct();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             //Ввод артикуля
             string pcod = comboBox1.SelectedValue.ToString();
@@ -145,10 +146,10 @@ namespace Kursovach
 
             string ost = $"SELECT ost, Cena, itog, sale FROM Product WHERE Kod_Producta = {pcod}";
 
-            MySqlCommand commanda = new MySqlCommand(ost,conn);
+            MySqlCommand commanda = new MySqlCommand(ost, conn);
             MySqlDataReader reader = commanda.ExecuteReader();
 
-            while(reader.Read())
+            while (reader.Read())
             {
                 ooos = Convert.ToInt32(reader[0]);
                 cena = Convert.ToInt32(reader[1]);
@@ -188,9 +189,14 @@ namespace Kursovach
             conn.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             reload_list();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
     }
 }

@@ -103,6 +103,7 @@ namespace Kursovach
         private void PriceList_Load(object sender, EventArgs e)
         {
             GetListPrice();
+            MaximizeBox = false;
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

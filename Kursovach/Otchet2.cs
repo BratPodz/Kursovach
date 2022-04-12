@@ -35,13 +35,16 @@ namespace Kursovach
         private void Otchet2_Load(object sender, EventArgs e)
         {
             GetListOtchet();
+            MaximizeBox = false;
         }
 
         public void GetListOtchet()
         {
             string sql = $"SELECT Production AS 'Продукт', sale AS 'Продано', itog AS 'На сумму' FROM Product";
             //Запрос для вывода строк в БД
-     
+
+            string p = $"Общая прибыль составляет - ";
+
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
             MyDA.SelectCommand = new MySqlCommand(sql, conn);
@@ -64,8 +67,15 @@ namespace Kursovach
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
 
+            string sum = $"SELECT SUM(itog) FROM Product";
+            MySqlCommand command1 = new MySqlCommand(sum, conn);
+            MySqlDataReader reader = command1.ExecuteReader();
+            while(reader.Read())
+            {
+                label3.Text = p + reader[0].ToString();
+            }
+            reader.Close();
             conn.Close();
         }
-
     }
 }

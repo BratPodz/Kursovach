@@ -121,6 +121,9 @@
   <data name="free-icon-edit-file-1647948" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-edit-file-1647948.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="free-icon-forklift-2361979" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-forklift-2361979.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="free-icon-trash-1251041" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-trash-1251041.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +135,9 @@
   </data>
   <data name="free-icon-employees-554795 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-employees-554795 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-health-report-7256630" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-health-report-7256630.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="premium-icon-information-1055189" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\premium-icon-information-1055189.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,6 +154,9 @@
   <data name="free-icon-forklift-2361979 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-forklift-2361979 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="free-icon-money-806843" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-money-806843.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pngegg (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,19 +169,31 @@
   <data name="free-icon-delivery-time-3143267 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-delivery-time-3143267 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="premium-icon-add-to-cart-5412593" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\premium-icon-add-to-cart-5412593.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-buy-online-985793 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-buy-online-985793 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-buy-online-985793 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-buy-online-985793 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="premium-icon-note-665916" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\premium-icon-note-665916.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-forklift-2361979" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-forklift-2361979.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="premium-icon-profits-3467240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\premium-icon-profits-3467240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="free-icon-money-icons-351769" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-money-icons-351769.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-health-report-7256630" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-health-report-7256630.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-profits-843662" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-profits-843662.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-profits-843662 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-profits-843662 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="premium-icon-add-to-cart-5412593" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\premium-icon-add-to-cart-5412593.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngwing.com (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngwing.com (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

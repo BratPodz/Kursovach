@@ -26,6 +26,7 @@ namespace Kursovach
         private void PriceList3_Load(object sender, EventArgs e)
         {
             GetComboBoxList();
+            MaximizeBox = false;
         }
 
         public void GetComboBoxList()

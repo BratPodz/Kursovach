@@ -39,6 +39,7 @@ namespace Kursovach
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -113,7 +114,7 @@ namespace Kursovach
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Linen;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(119, 557);
+            this.label8.Location = new System.Drawing.Point(89, 557);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(253, 16);
             this.label8.TabIndex = 18;
@@ -140,6 +141,16 @@ namespace Kursovach
             this.label10.TabIndex = 20;
             this.label10.Text = "0";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(356, 554);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(14, 20);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "|";
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Linen;
@@ -147,7 +158,7 @@ namespace Kursovach
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(56, 543);
+            this.button4.Location = new System.Drawing.Point(26, 543);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(57, 49);
             this.button4.TabIndex = 17;
@@ -225,6 +236,7 @@ namespace Kursovach
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1003, 594);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -239,7 +251,8 @@ namespace Kursovach
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Уволить_сотрудника);
             this.Controls.Add(this.dataGridView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Информация о сотрудниках";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -265,5 +278,6 @@ namespace Kursovach
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label1;
     }
 }

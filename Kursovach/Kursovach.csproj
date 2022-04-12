@@ -255,5 +255,26 @@
   <ItemGroup>
     <None Include="Resources\free-icon-health-report-7256630.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-buy-online-985793 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-buy-online-985793 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-profits-843662.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-profits-843662 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-profits-3467240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-money-806843.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com %287%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

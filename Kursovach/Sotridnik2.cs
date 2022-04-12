@@ -62,7 +62,7 @@ namespace Kursovach
 
         private void Sotridnik2_Load(object sender, EventArgs e)
         {
-
+            MaximizeBox = false;
         }
     }
 }

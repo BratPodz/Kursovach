@@ -75,6 +75,7 @@ namespace Kursovach
         private void Postavjik_Load(object sender, EventArgs e)
         {
             GetListPostavjik();
+            MaximizeBox = false;
         }
 
         private void dataGridView1_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)

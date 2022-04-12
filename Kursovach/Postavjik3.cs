@@ -110,5 +110,10 @@ namespace Kursovach
                 }
             }
         }
+
+        private void Postavjik3_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+        }
     }
 }

@@ -147,7 +147,7 @@ namespace Kursovach
             // maskedTextBox3
             // 
             this.maskedTextBox3.Location = new System.Drawing.Point(14, 270);
-            this.maskedTextBox3.Mask = "####-######-##";
+            this.maskedTextBox3.Mask = "############";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(186, 20);
             this.maskedTextBox3.TabIndex = 22;
@@ -228,6 +228,8 @@ namespace Kursovach
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sotrudnik3";
             this.Text = "Изменение информации";
             this.Load += new System.EventHandler(this.Sotrudnik3_Load);

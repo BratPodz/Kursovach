@@ -33,6 +33,7 @@ namespace Kursovach
         private void Otchet_Load(object sender, EventArgs e)
         {
             GetListProduct();
+            MaximizeBox = false;
         }
         public void GetListProduct()
         {
@@ -69,7 +70,8 @@ namespace Kursovach
 
             conn.Close();
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
         {
             Otchet2 o = new Otchet2();
             o.ShowDialog();

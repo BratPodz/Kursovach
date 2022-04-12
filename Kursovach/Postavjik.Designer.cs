@@ -31,16 +31,16 @@ namespace Kursovach
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Postavjik));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Удалить_поставщика = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Удалить_поставщика = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,41 +54,6 @@ namespace Kursovach
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick_1);
             // 
-            // Удалить_поставщика
-            // 
-            this.Удалить_поставщика.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Удалить_поставщика.BackgroundImage")));
-            this.Удалить_поставщика.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Удалить_поставщика.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.Удалить_поставщика.FlatAppearance.BorderSize = 0;
-            this.Удалить_поставщика.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Удалить_поставщика.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Удалить_поставщика.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Удалить_поставщика.Location = new System.Drawing.Point(303, 5);
-            this.Удалить_поставщика.Name = "Удалить_поставщика";
-            this.Удалить_поставщика.Size = new System.Drawing.Size(206, 34);
-            this.Удалить_поставщика.TabIndex = 6;
-            this.Удалить_поставщика.Text = "Удалить поставщика";
-            this.Удалить_поставщика.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Удалить_поставщика.UseVisualStyleBackColor = true;
-            this.Удалить_поставщика.Click += new System.EventHandler(this.Уволить_сотрудника_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(537, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(218, 34);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Добавить поставщика";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -100,37 +65,6 @@ namespace Kursovach
             this.label8.TabIndex = 20;
             this.label8.Text = "Изменить информацию о поставщике";
             this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Linen;
-            this.button2.BackgroundImage = global::Kursovach.Properties.Resources.free_icon_edit_file_1647948;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(15, 446);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 49);
-            this.button2.TabIndex = 19;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(396, 452);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(189, 34);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Обновить таблицу";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label9
             // 
@@ -182,6 +116,72 @@ namespace Kursovach
             this.label2.TabIndex = 26;
             this.label2.Text = "|";
             // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(396, 452);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(189, 34);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "Обновить таблицу";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Linen;
+            this.button2.BackgroundImage = global::Kursovach.Properties.Resources.free_icon_edit_file_1647948;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(15, 446);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(57, 49);
+            this.button2.TabIndex = 19;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(537, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(218, 34);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Добавить поставщика";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Удалить_поставщика
+            // 
+            this.Удалить_поставщика.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Удалить_поставщика.BackgroundImage")));
+            this.Удалить_поставщика.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Удалить_поставщика.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.Удалить_поставщика.FlatAppearance.BorderSize = 0;
+            this.Удалить_поставщика.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Удалить_поставщика.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Удалить_поставщика.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Удалить_поставщика.Location = new System.Drawing.Point(303, 5);
+            this.Удалить_поставщика.Name = "Удалить_поставщика";
+            this.Удалить_поставщика.Size = new System.Drawing.Size(206, 34);
+            this.Удалить_поставщика.TabIndex = 6;
+            this.Удалить_поставщика.Text = "Удалить поставщика";
+            this.Удалить_поставщика.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Удалить_поставщика.UseVisualStyleBackColor = true;
+            this.Удалить_поставщика.Click += new System.EventHandler(this.Уволить_сотрудника_Click);
+            // 
             // Postavjik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,8 +199,10 @@ namespace Kursovach
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Удалить_поставщика);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Postavjik";
-            this.Text = "Postavjik";
+            this.Text = "Поставки";
             this.Load += new System.EventHandler(this.Postavjik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

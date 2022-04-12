@@ -73,6 +73,7 @@ namespace Kursovach
         {
             GetListSotrunkik();
             GetComboBoxList();
+            MaximizeBox = false;
         }
 
         public void Reload()

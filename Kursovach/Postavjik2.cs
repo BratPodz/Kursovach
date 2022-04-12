@@ -52,5 +52,10 @@ namespace Kursovach
                 this.Close();
             }
         }
+
+        private void Postavjik2_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+        }
     }
 }

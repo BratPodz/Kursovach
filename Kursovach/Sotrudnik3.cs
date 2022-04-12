@@ -22,6 +22,7 @@ namespace Kursovach
         private void Sotrudnik3_Load(object sender, EventArgs e)
         {
             GetComboBoxList();
+            MaximizeBox = false;
         }
         MySqlConnection conn = new MySqlConnection(Con.C());
         //DataAdapter представляет собой объект Command , получающий данные из источника данных

@@ -36,7 +36,7 @@ namespace Kursovach
         public void GetListSotrunkik()
         {
             //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Sotrudnika AS 'Код сотрудника', FIO AS 'Фио', Data_Rojdeniya AS 'Дата рождения', Adres AS 'Адрес', Telefon AS 'Телефон', INN AS 'ИНН' FROM Sotrudnik";
+            string sql = $"SELECT Kod_Sotrudnika AS 'Код сотрудника', FIO AS 'ФИО', Data_Rojdeniya AS 'Дата рождения', Adres AS 'Адрес', Telefon AS 'Телефон', INN AS 'ИНН' FROM Sotrudnik";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn

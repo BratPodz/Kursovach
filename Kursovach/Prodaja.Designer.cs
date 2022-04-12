@@ -111,9 +111,9 @@ namespace Kursovach
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::Kursovach.Properties.Resources.pngwing_com__7_;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(573, 260);
+            this.pictureBox1.Location = new System.Drawing.Point(571, 260);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 259);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 259);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;

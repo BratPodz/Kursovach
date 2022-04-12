@@ -85,6 +85,7 @@ namespace Kursovach
             this.label8.Size = new System.Drawing.Size(277, 20);
             this.label8.TabIndex = 25;
             this.label8.Text = "Изменить информацию о продукте";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label2
             // 

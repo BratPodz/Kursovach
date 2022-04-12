@@ -1,0 +1,4 @@
+﻿Сборка начата…
+1>------ Сборка начата: проект: Kursovach, Конфигурация: Release Any CPU ------
+1>  Kursovach -> C:\Users\victo\source\repos\Kursovachzxczxc\Kursovach\bin\Release\Kursovach.exe
+========== Сборка: успешно: 1, с ошибками: 0, без изменений: 1, пропущено: 0 ==========

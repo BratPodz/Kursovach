@@ -128,10 +128,6 @@ namespace Kursovach
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Продавец",
-            "Уборщик",
-            "Aдминистратор"});
             this.comboBox1.Location = new System.Drawing.Point(16, 250);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(203, 21);

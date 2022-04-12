@@ -30,6 +30,8 @@ namespace Kursovach
             string nazvanie_p = textBox1.Text;
             string cena = textBox2.Text;
             string ost = textBox3.Text;
+            int itog = 0;
+            int sale = 0;
             //Формируем запрос на изменение
 
             if (nazvanie_p == string.Empty || cena == string.Empty || ost == string.Empty)
@@ -38,8 +40,8 @@ namespace Kursovach
             }
             else
             {
-                string sql_update_pricelist = $"INSERT INTO Product (Production, Cena, ost) " +
-                                 $"VALUES ('{nazvanie_p}', '{cena}', '{ost}')";
+                string sql_update_pricelist = $"INSERT INTO Product (Production, Cena, ost, itog, sale) " +
+                                 $"VALUES ('{nazvanie_p}', '{cena}', '{ost}', '{itog}', '{sale}')";
                 // устанавливаем соединение с БД
                 conn.Open();
                 // объект для выполнения SQL-запроса

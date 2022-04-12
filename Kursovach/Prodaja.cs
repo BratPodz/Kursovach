@@ -22,7 +22,7 @@ namespace Kursovach
         private void Prodaja_Load(object sender, EventArgs e)
         {
             GetListProduct();
-            GetComboBoxList();
+            GetComboBoxListProdaja();
             MaximizeBox = false;
         }
 
@@ -38,44 +38,43 @@ namespace Kursovach
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
 
-        public void GetComboBoxList()
+        public void GetComboBoxListProdaja()
         {
             //Формирование списка статусов
-            DataTable list_sotrudnik_table = new DataTable();
-            MySqlCommand list_sotrudnik_command = new MySqlCommand();
+            DataTable list_prodaja_table = new DataTable();
+            MySqlCommand list_prodaja_command = new MySqlCommand();
             //Открываем соединение
             conn.Open();
             //Формируем столбцы для комбобокса списка ЦП
-            list_sotrudnik_table.Columns.Add(new DataColumn("Kod_Producta", System.Type.GetType("System.Int32")));
-            list_sotrudnik_table.Columns.Add(new DataColumn("Production", System.Type.GetType("System.String")));
+            list_prodaja_table.Columns.Add(new DataColumn("Kod_Producta", System.Type.GetType("System.Int32")));
+            list_prodaja_table.Columns.Add(new DataColumn("Production", System.Type.GetType("System.String")));
             //Настройка видимости полей комбобокса
-            comboBox1.DataSource = list_sotrudnik_table;
+            comboBox1.DataSource = list_prodaja_table;
             comboBox1.DisplayMember = "Production";
             comboBox1.ValueMember = "Kod_Producta";
             //Формируем строку запроса на отображение списка статусов прав пользователя
-            string sql_list_users = "SELECT Kod_Producta, Production FROM Product";
-            list_sotrudnik_command.CommandText = sql_list_users;
-            list_sotrudnik_command.Connection = conn;
+            string sql_prodaja = "SELECT Kod_Producta, Production FROM Product";
+            list_prodaja_command.CommandText = sql_prodaja;
+            list_prodaja_command.Connection = conn;
             //Формирование списка ЦП для combobox'a
-            MySqlDataReader list_sotrudnik_reader;
+            MySqlDataReader list_prodaja_reader;
             try
             {
                 //Инициализируем ридер
-                list_sotrudnik_reader = list_sotrudnik_command.ExecuteReader();
-                while (list_sotrudnik_reader.Read())
+                list_prodaja_reader = list_prodaja_command.ExecuteReader();
+                while (list_prodaja_reader.Read())
                 {
-                    DataRow rowToAdd = list_sotrudnik_table.NewRow();
-                    rowToAdd["Kod_Producta"] = Convert.ToInt32(list_sotrudnik_reader[0]);
-                    rowToAdd["Production"] = list_sotrudnik_reader[1].ToString();
-                    list_sotrudnik_table.Rows.Add(rowToAdd);
+                    DataRow rowToAdd = list_prodaja_table.NewRow();
+                    rowToAdd["Kod_Producta"] = Convert.ToInt32(list_prodaja_reader[0]);
+                    rowToAdd["Production"] = list_prodaja_reader[1].ToString();
+                    list_prodaja_table.Rows.Add(rowToAdd);
                 }
-                list_sotrudnik_reader.Close();
+                list_prodaja_reader.Close();
                 conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка чтения списка ЦП \n\n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
             }
             finally
             {
@@ -88,11 +87,11 @@ namespace Kursovach
         public void GetListProduct()
         {
             //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Producta AS 'Код Продукта', Production AS 'Название Продукта', Cena AS 'Цена', ost AS 'Остаток' FROM Product";
+            string sql_product = $"SELECT Kod_Producta AS 'Код Продукта', Production AS 'Название Продукта', Cena AS 'Цена', ost AS 'Остаток' FROM Product";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new MySqlCommand(sql, conn);
+            MyDA.SelectCommand = new MySqlCommand(sql_product, conn);
             //Заполняем таблицу записями из БД
             MyDA.Fill(table);
             //Указываем, что источником данных в bindingsource является заполненная выше таблица
@@ -109,8 +108,6 @@ namespace Kursovach
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            int count_rows = dataGridView1.RowCount - 0;
 
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
@@ -131,7 +128,7 @@ namespace Kursovach
             //Кол-во товара
             int kol = Convert.ToInt32(textBox2.Text);
 
-            string comp = textBox4.Text;
+            string name = textBox4.Text;
 
             string date_of_operation = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -157,7 +154,7 @@ namespace Kursovach
                 sale = Convert.ToInt32(reader[3]);
             }
             reader.Close();
-
+            
             if (kol <= ooos)
             {
                 sale = kol + sale;
@@ -165,15 +162,15 @@ namespace Kursovach
                 itog = cena * kol + itog;
                 try
                 {
-                    string query2 = $"UPDATE Product SET sale = {sale}, ost = {ooos}, itog = {itog} WHERE Kod_Producta = {pcod}";
-                    MySqlCommand command = new MySqlCommand(query2, conn);
+                    string update_prodaja = $"UPDATE Product SET sale = {sale}, ost = {ooos}, itog = {itog} WHERE Kod_Producta = {pcod}";
+                    MySqlCommand command = new MySqlCommand(update_prodaja, conn);
                     command.ExecuteNonQuery();
 
-                    string query4 = $"INSERT INTO Prodaja (Kolichestvo, Data_Prodaji, Name_Komp, id)" +
-                    $"VALUES ('{kol}','{date_of_operation}','{comp}','{pcod}')";
-                    MySqlCommand command3 = new MySqlCommand(query4, conn);
+                    string insert_prodaja = $"INSERT INTO Prodaja (Kolichestvo, Data_Prodaji, Name_Komp, id)" +
+                    $"VALUES ('{kol}','{date_of_operation}','{name}','{pcod}')";
+                    MySqlCommand command2 = new MySqlCommand(insert_prodaja, conn);
                     // выполняем запрос
-                    command3.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
                 }
                 finally
                 {
@@ -185,7 +182,6 @@ namespace Kursovach
             {
                 MessageBox.Show($"Товара нет в наличии");
             }
-
             conn.Close();
         }
 

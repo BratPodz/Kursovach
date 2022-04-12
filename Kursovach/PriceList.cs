@@ -31,8 +31,8 @@ namespace Kursovach
         private DataSet ds = new DataSet();
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
-        string index_rows5;
-        string id_rows5;
+        string index;
+        string id;
 
 
         public void GetListPrice()
@@ -60,8 +60,8 @@ namespace Kursovach
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.RowHeadersVisible = false;
 
-            int count_rows = dataGridView1.RowCount - 0;
-            label10.Text = (count_rows).ToString();
+            int count = dataGridView1.RowCount - 0;
+            label10.Text = (count).ToString();
 
             conn.Close();
 
@@ -78,7 +78,7 @@ namespace Kursovach
                 conn.Open();
                 delete_price.ExecuteNonQuery();
                 MessageBox.Show("Удаление прошло успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataGridView1.Rows.RemoveAt(Convert.ToInt32(index_rows5));
+                dataGridView1.Rows.RemoveAt(Convert.ToInt32(index));
             }
             catch (Exception ex)
             {
@@ -114,15 +114,15 @@ namespace Kursovach
 
                 dataGridView1.CurrentRow.Selected = true;
 
-                index_rows5 = dataGridView1.SelectedCells[0].RowIndex.ToString();
+                index = dataGridView1.SelectedCells[0].RowIndex.ToString();
 
-                id_rows5 = dataGridView1.Rows[Convert.ToInt32(index_rows5)].Cells[0].Value.ToString();
+                id = dataGridView1.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString();
             }
         }
 
         private void Удалить_поставщика_Click(object sender, EventArgs e)
         {
-            DeletePrice(id_rows5);
+            DeletePrice(id);
             Reload();
         }
 
@@ -141,6 +141,12 @@ namespace Kursovach
         private void button3_Click(object sender, EventArgs e)
         {
             Reload();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            PriceList3 p = new PriceList3();
+            p.ShowDialog();
         }
     }
 }

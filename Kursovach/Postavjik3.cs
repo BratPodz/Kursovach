@@ -17,43 +17,43 @@ namespace Kursovach
         public Postavjik3()
         {
             InitializeComponent();
-            GetComboBoxList();
+            GetComboBoxListPostavjik();
         }
 
         MySqlConnection conn = new MySqlConnection(Con.C());
 
-        public void GetComboBoxList()
+        public void GetComboBoxListPostavjik()
         {
             //Формирование списка статусов
-            DataTable list_sotrudnik_table = new DataTable();
-            MySqlCommand list_sotrudnik_command = new MySqlCommand();
+            DataTable list_postavjik_table = new DataTable();
+            MySqlCommand list_postavjik_command = new MySqlCommand();
             //Открываем соединение
             conn.Open();
             //Формируем столбцы для комбобокса списка ЦП
-            list_sotrudnik_table.Columns.Add(new DataColumn("Kod_Postavjika", System.Type.GetType("System.Int32")));
-            list_sotrudnik_table.Columns.Add(new DataColumn("Nazvanie_P", System.Type.GetType("System.String")));
+            list_postavjik_table.Columns.Add(new DataColumn("Kod_Postavjika", System.Type.GetType("System.Int32")));
+            list_postavjik_table.Columns.Add(new DataColumn("Nazvanie_P", System.Type.GetType("System.String")));
             //Настройка видимости полей комбобокса
-            comboBox2.DataSource = list_sotrudnik_table;
+            comboBox2.DataSource = list_postavjik_table;
             comboBox2.DisplayMember = "Nazvanie_P";
             comboBox2.ValueMember = "Kod_Postavjika";
             //Формируем строку запроса на отображение списка статусов прав пользователя
-            string sql_list_users = "SELECT Kod_Postavjika, Nazvanie_P FROM Postavjik";
-            list_sotrudnik_command.CommandText = sql_list_users;
-            list_sotrudnik_command.Connection = conn;
+            string sql_list_postavjik = "SELECT Kod_Postavjika, Nazvanie_P FROM Postavjik";
+            list_postavjik_command.CommandText = sql_list_postavjik;
+            list_postavjik_command.Connection = conn;
             //Формирование списка ЦП для combobox'a
-            MySqlDataReader list_sotrudnik_reader;
+            MySqlDataReader list_postavjik_reader;
             try
             {
                 //Инициализируем ридер
-                list_sotrudnik_reader = list_sotrudnik_command.ExecuteReader();
-                while (list_sotrudnik_reader.Read())
+                list_postavjik_reader = list_postavjik_command.ExecuteReader();
+                while (list_postavjik_reader.Read())
                 {
-                    DataRow rowToAdd = list_sotrudnik_table.NewRow();
-                    rowToAdd["Kod_Postavjika"] = Convert.ToInt32(list_sotrudnik_reader[0]);
-                    rowToAdd["Nazvanie_P"] = list_sotrudnik_reader[1].ToString();
-                    list_sotrudnik_table.Rows.Add(rowToAdd);
+                    DataRow rowToAdd = list_postavjik_table.NewRow();
+                    rowToAdd["Kod_Postavjika"] = Convert.ToInt32(list_postavjik_reader[0]);
+                    rowToAdd["Nazvanie_P"] = list_postavjik_reader[1].ToString();
+                    list_postavjik_table.Rows.Add(rowToAdd);
                 }
-                list_sotrudnik_reader.Close();
+                list_postavjik_reader.Close();
                 conn.Close();
             }
             catch (Exception ex)
@@ -90,9 +90,9 @@ namespace Kursovach
                 {
                     conn.Open();
                     // запрос обновления данных
-                    string query2 = $"UPDATE Postavjik SET Nazvanie_P = '{Nazvanie}', Telefon = '{Telefon}', Rascetniy_Schet = '{Rascetniy_Schet}', Product = '{comboBox1.Text}', Kolvo = '{Kolvo}' WHERE Kod_Postavjika = '{Kod_Postavjika}'";
+                    string query_postavjik = $"UPDATE Postavjik SET Nazvanie_P = '{Nazvanie}', Telefon = '{Telefon}', Rascetniy_Schet = '{Rascetniy_Schet}', Product = '{comboBox1.Text}', Kolvo = '{Kolvo}' WHERE Kod_Postavjika = '{Kod_Postavjika}'";
                     // объект для выполнения SQL-запроса
-                    MySqlCommand command = new MySqlCommand(query2, conn);
+                    MySqlCommand command = new MySqlCommand(query_postavjik, conn);
                     // выполняем запрос
                     command.ExecuteNonQuery();
                     // закрываем подключение к БД6

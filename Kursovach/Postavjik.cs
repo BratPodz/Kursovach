@@ -30,8 +30,8 @@ namespace Kursovach
         private DataSet ds = new DataSet();
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
-        string index_rows5;
-        string id_rows5;
+        string index;
+        string id;
 
         public void GetListPostavjik()
         {
@@ -64,8 +64,8 @@ namespace Kursovach
 
             dataGridView1.AllowUserToAddRows = false;
 
-            int count_rows = dataGridView1.RowCount - 0;
-            label10.Text = (count_rows).ToString();
+            int count = dataGridView1.RowCount - 0;
+            label10.Text = (count).ToString();
 
             dataGridView1.RowHeadersVisible = false;
             conn.Close();
@@ -86,24 +86,24 @@ namespace Kursovach
 
                 dataGridView1.CurrentRow.Selected = true;
 
-                index_rows5 = dataGridView1.SelectedCells[0].RowIndex.ToString();
+                index = dataGridView1.SelectedCells[0].RowIndex.ToString();
 
-                id_rows5 = dataGridView1.Rows[Convert.ToInt32(index_rows5)].Cells[0].Value.ToString();
+                id = dataGridView1.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString();
             }
         }
 
-        public void DeleteSotrudnik(string id_postavjik)
+        public void DeletePostavjik(string id_postavjik)
         {
             //Формируем строку запроса на добавление строк
-            string sql_delete_user = $"DELETE FROM Postavjik WHERE Kod_Postavjika = '{id_postavjik}'";
+            string sql_delete_postavjik = $"DELETE FROM Postavjik WHERE Kod_Postavjika = '{id_postavjik}'";
             //Посылаем запрос на обновление данных
-            MySqlCommand delete_user = new MySqlCommand(sql_delete_user, conn);
+            MySqlCommand delete_postavjik = new MySqlCommand(sql_delete_postavjik, conn);
             try
             {
                 conn.Open();
-                delete_user.ExecuteNonQuery();
+                delete_postavjik.ExecuteNonQuery();
                 MessageBox.Show("Удаление прошло успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataGridView1.Rows.RemoveAt(Convert.ToInt32(index_rows5));
+                dataGridView1.Rows.RemoveAt(Convert.ToInt32(index));
             }
             catch
             {
@@ -126,7 +126,7 @@ namespace Kursovach
 
         private void Уволить_сотрудника_Click(object sender, EventArgs e)
         {
-            DeleteSotrudnik(id_rows5);
+            DeletePostavjik(id);
         }
 
         private void button1_Click(object sender, EventArgs e)

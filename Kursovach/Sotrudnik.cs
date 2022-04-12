@@ -31,16 +31,16 @@ namespace Kursovach
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
         string index_rows5;
-        string id_rows5;
+        public static string id_rows5;
 
         public void GetListSotrunkik()
         {
             //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Sotrudnika AS 'Код сотрудника', FIO AS 'ФИО', Data_Rojdeniya AS 'Дата рождения', Adres AS 'Адрес', Telefon AS 'Телефон', INN AS 'ИНН' FROM Sotrudnik";
+            string sql_select_sotrud = $"SELECT Kod_Sotrudnika AS 'Код сотрудника', FIO AS 'ФИО', Data_Rojdeniya AS 'Дата рождения', Adres AS 'Адрес', Telefon AS 'Телефон', INN AS 'ИНН' FROM Sotrudnik";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new MySqlCommand(sql, conn);
+            MyDA.SelectCommand = new MySqlCommand(sql_select_sotrud, conn);
             //Заполняем таблицу записями из БД
             MyDA.Fill(table);
             //Указываем, что источником данных в bindingsource является заполненная выше таблица
@@ -62,8 +62,8 @@ namespace Kursovach
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            int count_rows = dataGridView1.RowCount - 0;
-            label10.Text = (count_rows).ToString();
+            int count = dataGridView1.RowCount - 0;
+            label10.Text = (count).ToString();
 
             dataGridView1.RowHeadersVisible = false;
             conn.Close();
@@ -72,7 +72,7 @@ namespace Kursovach
         private void Form2_Load(object sender, EventArgs e)
         {
             GetListSotrunkik();
-            GetComboBoxList();
+            GetComboBoxListSotrud();
             MaximizeBox = false;
         }
 
@@ -99,7 +99,6 @@ namespace Kursovach
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка удаления строки \n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
             }
             finally
             {
@@ -122,7 +121,7 @@ namespace Kursovach
                 id_rows5 = dataGridView1.Rows[Convert.ToInt32(index_rows5)].Cells[0].Value.ToString();
             }
         }
-        public void GetComboBoxList()
+        public void GetComboBoxListSotrud()
         {
             //Формирование списка статусов
             DataTable list_sotrudnik_table = new DataTable();
@@ -170,9 +169,9 @@ namespace Kursovach
         {
             conn.Open();
             //Строка запроса
-            string commandStr = $"SELECT FIO, Nazvanie_Doljnosti, Oklad FROM Sotrudnik INNER JOIN Doljnost ON Sotrudnik.Kod_Doljnosti = Doljnost.Kod_Doljnosti WHERE FIO = '{comboBox1.Text}'";
+            string getlist = $"SELECT FIO, Nazvanie_Doljnosti, Oklad FROM Sotrudnik INNER JOIN Doljnost ON Sotrudnik.Kod_Doljnosti = Doljnost.Kod_Doljnosti WHERE FIO = '{comboBox1.Text}'";
             //Команда для получения списка
-            MySqlCommand get_list = new MySqlCommand(commandStr, conn);
+            MySqlCommand get_list = new MySqlCommand(getlist, conn);
             //Ридер для хранения списка строк
             MySqlDataReader reader_list = get_list.ExecuteReader();
             //Читаем ридер

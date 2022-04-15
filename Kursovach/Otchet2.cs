@@ -34,11 +34,11 @@ namespace Kursovach
 
         private void Otchet2_Load(object sender, EventArgs e)
         {
-            GetListOtchet();
+            GetListOtchet2();
             MaximizeBox = false;
         }
 
-        public void GetListOtchet()
+        public void GetListOtchet2()
         {
             string sql = $"SELECT Production AS 'Продукт', sale AS 'Продано', itog AS 'На сумму' FROM Product";
             //Запрос для вывода строк в БД

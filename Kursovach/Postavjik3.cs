@@ -90,7 +90,8 @@ namespace Kursovach
                 {
                     conn.Open();
                     // запрос обновления данных
-                    string query_postavjik = $"UPDATE Postavjik SET Nazvanie_P = '{Nazvanie}', Telefon = '{Telefon}', Rascetniy_Schet = '{Rascetniy_Schet}', Product = '{comboBox1.Text}', Kolvo = '{Kolvo}' WHERE Kod_Postavjika = '{Kod_Postavjika}'";
+                    string query_postavjik = $"UPDATE Postavjik SET Nazvanie_P = '{Nazvanie}', Telefon = '{Telefon}', Rascetniy_Schet = '{Rascetniy_Schet}', " +
+                        $"Product = '{comboBox1.Text}', Kolvo = '{Kolvo}' WHERE Kod_Postavjika = '{Kod_Postavjika}'";
                     // объект для выполнения SQL-запроса
                     MySqlCommand command = new MySqlCommand(query_postavjik, conn);
                     // выполняем запрос

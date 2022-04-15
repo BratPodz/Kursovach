@@ -39,13 +39,13 @@ namespace Kursovach
             string sql_select_sotrud = $"SELECT Kod_Sotrudnika AS 'Код сотрудника', FIO AS 'ФИО', Data_Rojdeniya AS 'Дата рождения', Adres AS 'Адрес', Telefon AS 'Телефон', INN AS 'ИНН' FROM Sotrudnik";
             //Открываем соединение
             conn.Open();
-            //Объявляем команду, которая выполнить запрос в соединении conn
+            //Объявляем команду, которая выполнит запрос
             MyDA.SelectCommand = new MySqlCommand(sql_select_sotrud, conn);
             //Заполняем таблицу записями из БД
             MyDA.Fill(table);
-            //Указываем, что источником данных в bindingsource является заполненная выше таблица
+
             bSource.DataSource = table;
-            //Указываем, что источником данных ДатаГрида является bindingsource 
+
             dataGridView1.DataSource = bSource;
 
             dataGridView1.Columns[0].FillWeight = 9;
@@ -136,8 +136,8 @@ namespace Kursovach
             comboBox1.DisplayMember = "FIO";
             comboBox1.ValueMember = "Kod_Sotrudnika";
             //Формируем строку запроса на отображение списка статусов прав пользователя
-            string sql_list_users = "SELECT Kod_Sotrudnika, FIO FROM Sotrudnik";
-            list_sotrudnik_command.CommandText = sql_list_users;
+            string sql = "SELECT Kod_Sotrudnika, FIO FROM Sotrudnik";
+            list_sotrudnik_command.CommandText = sql;
             list_sotrudnik_command.Connection = conn;
             //Формирование списка ЦП для combobox'a
             MySqlDataReader list_sotrudnik_reader;
@@ -158,7 +158,6 @@ namespace Kursovach
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка чтения списка ЦП \n\n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
             }
             finally
             {

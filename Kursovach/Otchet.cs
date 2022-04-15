@@ -32,14 +32,13 @@ namespace Kursovach
 
         private void Otchet_Load(object sender, EventArgs e)
         {
-            GetListProduct();
+            GetListOtchet();
             MaximizeBox = false;
         }
-        public void GetListProduct()
+        public void GetListOtchet()
         {
-            //string sql = $"SELECT DISTINCTROW Product.Production AS 'Продукт', SUM(Product.sale) AS 'Продано' FROM Prodaja INNER JOIN Product ON Prodaja.id = Product.Kod_Producta GROUP BY Product.Production";
-            //Запрос для вывода строк в БД
-            string sql = $"SELECT Kod_Prodaji AS 'Код продажи', Production AS 'Название продукта', Kolichestvo AS 'Количество', Prodaja.Data_Prodaji AS 'Дата продажи', Prodaja.Name_Komp AS 'Имя покупателя'  FROM Product INNER JOIN Prodaja ON Product.Kod_Producta = Prodaja.id";
+            string sql = $"SELECT Kod_Prodaji AS 'Код продажи', Production AS 'Название продукта', Kolichestvo AS 'Количество', Prodaja.Data_Prodaji AS 'Дата продажи', " +
+                $"Prodaja.Name_Komp AS 'Наименование заказчика'  FROM Product INNER JOIN Prodaja ON Product.Kod_Producta = Prodaja.id";
             ////Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn

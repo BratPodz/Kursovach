@@ -137,9 +137,7 @@ namespace Kursovach
             int itog = 0;
             int sale = 0;
 
-            // устанавливаем соединение с БД
             conn.Open();
-            // запрос обновления данных
 
             string ost = $"SELECT ost, Cena, itog, sale FROM Product WHERE Kod_Producta = {pcod}";
 
